@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #005775;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.header {
+    height: 150px;
+    background-image: url(images/fon2.jpg);
+}
+
+.header h1 {
+    color: white;
+    padding: 20px 0 0 20px;
+    margin: 0;
+    font-size: 3em;
+
+}
+
+.header p {
+    padding: 0 0 0 20px;
+    color: white;
+}
+
+.header a {
+    text-decoration: none;
+
+}
+
+
+
+.facebook,
+.twitter,
+.googleplus,
+.vk,
+.youtube {
+    width: 30px;
+
+}
+
+.icons {
+    padding: 20px 0 0 20px;
+
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    width: 60%;
+
+
+}
+
+nav a {
+    flex: 1;
+    color: white;
+    padding: 10px;
+
+}
+
+nav a:hover {
+    color: #005775;
+    background: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.active {
+    color: #005775;
+    background: white;
+    border-radius: 5px;
+
+
+}
+
+.item {
+    padding-left: 300px;
+
+}
+
+.btn-warning {
+    color: white;
+    background-color: #005775;
+    border-color: #005775;
+    margin-top: 165px;
+    margin-left: -180px;
+
+}
+
+.btn-warning:hover {
+    color: #6b6b7b;
+    background-color: #9f9f7c;
+    border-color: #9f9f7c;
+
+
+}
+
+.item .active {
+    background-color: #005775;
+}
+
+.center h2 {
+    color: white;
+    text-align: center;
+}
+
+.center a {
+    text-decoration: none;
+}
+
+.news h2 {
+    text-align: center;
+    color: white;
+}
+
+.news li {
+    list-style: none;
+}
+
+.photo2,
+.photo3,
+.photo4 {
+    width: 320px;
+    height: 240px;
+}
+
+.photo3,
+.photo4 {
+    height: 270px;
+}
+
+.mini_news h2 {
+    color: white;
+}
+
+.mini_news i {
+    color: white;
+    background-color: #005775;
+    border-color: #005775;
+    padding: 5px;
+
+}
+
+.mini_news i:hover {
+    color: #6b6b7b;
+    background-color: #9f9f7c;
+    border-color: #9f9f7c;
+
+
+}
+
+.search h2 {
+    color: white;
+}
+
+.search a {
+    padding: 0;
+    height: 20px;
+
+}
+
+form {
+    padding: 5px;
+    background: #5a6676;
+    height: 100px;
+    width: 220px;
+    border-radius: 5px;
+
+}
+
+input {
+    background-color: #005775;
+    width: 150px;
+    border-radius: 5px;
+    margin-right: 0;
+
+}
+
+i {
+    background: white;
+    color: #005775;
+    padding: 5px;
+    margin-left: 0;
+    border-radius: 5px;
+
+}
+
+figure {
+    background: white;
+    color: #005775;
+    margin-top: 20px;
+}
+
+
+
+.mini_new {
+    width: 220px;
+    height: 120px;
+
+}
+
+.mini_news figure > img {
+    width: 85px;
+    height: 85px;
+}
+
+.mini_news li {
+    list-style: none;
+}
+
+.mini_news ul {
+    padding: 0;
+}
+
+.mini_news figure > ficaption {
+    width: 100px;
+    height: 100px;
+    color: #005775;
+}
+
+.text {
+    width: 210px;
+    padding-left: 85px;
+    position: relative;
+    bottom: 85px;
+}
+
+figure a {
+    position: relative;
+    bottom: 85px;
+    left: 180px;
+}
+
+footer {
+    margin-top: 30px;
+    background: #8f999a
+}
+
+.menu {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.menu a {
+    color: white;
+    padding: 10px;
+}
+
+.menu a:hover {
+    color: #005775;
+    background: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+small {
+    float: right;
+    padding-bottom: 50px;
+    color: white;
+}
+
+@media all and (max-width: 768px) {
+    .header {
+        height: 250px;
+    }
+    nav {
+        width: 100%;
+    }
+    nav a {
+        padding: 5px;
+    }
+    .center {
+        overflow: hidden;
+
+    }
+    .news ul {
+        padding: 0;
+    }
+    .footer {
+        padding: 0;
+        height: 80px;
+
+    }
+    small {
+        padding-top: 10px;
+    }
+
+    .news img {
+        width: 100%;
+
+    }
+    .news figure {
+        width: 90%;
+
+    }
+    .news ficaption {
+        width: 100%;
+    }
+
+    table {
+        width: 20%;
+    }
+    .btn {
+        margin-right: 60%;
+
+    }
+    .menu {
+        display: block;
+        width: 90%;
+    }
+
+
+}
