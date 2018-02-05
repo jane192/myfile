@@ -14,7 +14,7 @@
 <body>
      <?require_one('templades/top.php');?>
     <main>
-        <div class="center col-md-9 col-lg-10 ">
+        <div class="center col-lg-9 ">
             <h2>Альбомы</h2>
             <div id="carousel-example-generic" class="carousel slide alboms " data-ride="carousel">
                 <!-- Indicators -->
@@ -97,7 +97,7 @@
                 </ul>
             </div>
         </div>
-        <div class="widgets col-md-3 col-lg-2">
+        <div class="widgets col-lg-3">
             <div class="search">
                 <h2>Поиск</h2>
                 <form action=""><input type="text" placeholder="Поиск по сайту">
