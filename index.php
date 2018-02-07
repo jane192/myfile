@@ -1,67 +1,24 @@
-<!DOCTYPE html>
-<html>
+<?require('templades/top.php');
+  if(isset($_GET['url'])){
+      $url = $_GET['url'];
+  } else{
+    $url = 'index';
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Hurts</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic" rel="stylesheet">
+     $query = "SELECT * FROM maintexts WHERE url = '$url'";
 
-</head>
-
-<body>
-     <?require_one('templades/top.php');?>
+     $adr = mysqli_query($dbconnect, $query);
+     if (!$adr){
+         exit('Error query');
+     }
+     $arr = mysqli_fetch_array($adr);
+     ?>
     <main>
         <div class="center col-lg-9 ">
-            <h2>Альбомы</h2>
-            <div id="carousel-example-generic" class="carousel slide alboms " data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <a href="#"><img src="images/photo1.JPG" alt="albom1"></a>
-                        <div class="carousel-caption">
+            <h2><?=$arr['name'];?></h2>
+           <div><?=$arr['body'];?></div>
 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="#"><img src="images/photo2.jpg" alt="albom2"></a>
-                        <div class="carousel-caption">
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="#"><img src="images/photo3.png" alt="albom3"></a>
-                        <div class="carousel-caption">
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="#"><img src="images/photo4.jpg" alt="albom4"></a>
-                        <div class="carousel-caption">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-            </div>
             <div class="news">
                 <h2>Новости</h2>
                 <ul>
@@ -171,9 +128,4 @@
             </table>
         </div>
     </main>
-   <?require_one('templades/bottom.php');?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+   <?require('templades/bottom.php');?>

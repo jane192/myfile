@@ -1,3 +1,6 @@
+<?php
+require_once('config/config.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,9 +15,10 @@
 </head>
 
 <body>
+
     <header class="header">
         <div class="logo col-md-10">
-            <a href="#">
+            <a href="/">
                 <h1>Hurts</h1>
             </a>
             <p>The Hottest Heartbreakers in the World</p>
@@ -27,14 +31,10 @@
             <a href="#"><img class="vk" src="images/vk.jpg" alt="vk"></a>
         </div>
         <nav>
-            <a href="#" class="active">Главная</a>
+            <a href="/" class="active">Главная</a>
             <a href="#">Видео</a>
             <a href="#">Песни</a>
             <a href="#">Тексты песен</a>
-            <a href="#">О группе</a>
+            <a href="/index.php?url=content">О группе</a>
         </nav>
     </header>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    </body>
-</html>
