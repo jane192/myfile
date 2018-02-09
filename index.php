@@ -57,7 +57,7 @@
         <div class="widgets col-lg-3">
             <div class="search">
                 <h2>Поиск</h2>
-                <form action=""><input type="text" placeholder="Поиск по сайту">
+                <form class="form" action=""><input type="text" placeholder="Поиск по сайту">
                     <a href="#"><i class=" glyphicon glyphicon-search "></i></a>
                 </form>
             </div>
