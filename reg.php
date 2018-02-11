@@ -4,29 +4,59 @@ if ($_POST) {
     print_r($_POST);
     echo "</pre>";*/
 }
+
+
+$pname = $_POST['name'];
+$pemail = $_POST['email'];
+$ppassword = $_POST['password'];
+$ppassword2 = $_POST['password_repeat'];
 if ($_POST) {
     $errors = [];
-    if (!$_POST['name']) {
+    if (!$pname) {
         $errors[] = 'Имя не заполнено';
     }
-    if (!$_POST['password']) {
+    if (!$ppassword) {
         $errors[] = 'Пароль не заполнен';
     }
-    if ($_POST['password'] != $_POST['password_repeat']) {
+    if ($ppassword != $ppassword2) {
 
         $errors[] = 'Пароли не совпадают';
     }
-    if (!$_POST['email']) {
-        $errors[] = 'email не заполнен';
+    if (!$pemail) {
+        $errors[] = 'Email не заполнен';
     }
+
     if (empty($errors)) {
-        $query = "INSERT INTO users VALUES(null,
-'" .$_POST['name']. "',
-        '" .$_POST['email']. "',
-        '" .$_POST['password']. "',
-         NOW(),
-        NOW(),
-        'unblock')";
+
+        $query = "INSERT INTO users VALUES (null,'$pname',' $pemail ','$ppassword ',NOW(),NOW(),'unblock')";
+
+        
+        //проверяем является ли в базе данных пользователь с данным именем
+        $query2 = "SELECT name FROM users WHERE name = '$pname' ";
+
+        $result1 = mysqli_query($dbconnect, $query2);
+        $row1 = (mysqli_num_rows($result1));
+        if($row1){
+            echo "Имя повторяется";
+            exit('Error query');
+        }
+        
+
+        
+        //проверяем является ли в базе данных пользователь с данным password
+        $query4 = "SELECT password FROM users WHERE password = '$ppassword' ";
+          $result3 = mysqli_query($dbconnect, $query4);
+        $row3 = (mysqli_num_rows($result3));
+        if($row3){
+            echo "Пароль повторяется";
+            exit('Error query');}
+         //проверяем является ли в базе данных пользователь с данным email
+        $query3 = "SELECT email FROM users WHERE email = '$pemail' ";
+        $result2 = mysqli_query($dbconnect, $query3);
+        $row2 = (mysqli_num_rows($result2));
+        if($row2){
+            echo "Email повторяется";
+            exit('Error query');}
 
         $cat = mysqli_query($dbconnect, $query);
         if (!$cat) {
@@ -44,12 +74,8 @@ if ($_POST) {
             echo $err;
             echo "</div>";
         }
-
     }
-
-
 }
-
 
 ?>
     <main class='center'>
@@ -62,7 +88,7 @@ if ($_POST) {
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input required type="email" class="form-control" id="email" name="email" placeholder="email">
+                <input required  type="email" class="form-control" id="email" name="email" placeholder="Почта">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
