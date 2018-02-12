@@ -1,6 +1,7 @@
-<?php
+<?php session_start();
 require_once('config/config.php');
-?>
+?>   
+
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +35,20 @@ require_once('config/config.php');
             <a href="/" class="active">Главная</a>
             <a href="#">Видео</a>
             <a href="#">Песни</a>
-            <a href="#">Тексты песен</a>
+            <a href="#">Тексты песен</a>            
             <a href="/index.php?url=content">О группе</a>
+           <? if (isset($_SESSION['user_id'])){
+    ?>
+<a href = "cabinet.php"> Кабинет</a>
+<a href = "logout.php">Выход</a>
+<?
+}else{
+ 
+            ?>
+            <a href="reg.php">Регистрация</a>
+    <a href="login.php">Вход</a>
+       <?php
+}
+?>
         </nav>
     </header>
