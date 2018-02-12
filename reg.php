@@ -15,6 +15,11 @@ if ($_POST) {
     if (!$pname) {
         $errors[] = 'Имя не заполнено';
     }
+    
+    if (!$pemail) {
+        $errors[] = 'Email не заполнен';
+    }
+   
     if (!$ppassword) {
         $errors[] = 'Пароль не заполнен';
     }
@@ -22,13 +27,11 @@ if ($_POST) {
 
         $errors[] = 'Пароли не совпадают';
     }
-    if (!$pemail) {
-        $errors[] = 'Email не заполнен';
-    }
+    
 
     if (empty($errors)) {
 
-        $query = "INSERT INTO users VALUES (null,'$pname',' $pemail ','$ppassword ',NOW(),NOW(),'unblock')";
+        $query = "INSERT INTO users VALUES (null,'$pname', '$pemail' ,'$ppassword ',NOW(),NOW(),'unblock')";
 
         
         //проверяем является ли в базе данных пользователь с данным именем
@@ -39,9 +42,7 @@ if ($_POST) {
         if($row1){
             echo "Имя повторяется";
             exit('Error query');
-        }
-        
-
+             }      
         
         //проверяем является ли в базе данных пользователь с данным password
         $query4 = "SELECT password FROM users WHERE password = '$ppassword' ";
@@ -51,7 +52,7 @@ if ($_POST) {
             echo "Пароль повторяется";
             exit('Error query');}
          //проверяем является ли в базе данных пользователь с данным email
-        $query3 = "SELECT email FROM users WHERE email = '$pemail' ";
+        $query3 = "SELECT email FROM users WHERE email = '$pemail'";
         $result2 = mysqli_query($dbconnect, $query3);
         $row2 = (mysqli_num_rows($result2));
         if($row2){
@@ -88,7 +89,7 @@ if ($_POST) {
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input required  type="email" class="form-control" id="email" name="email" placeholder="Почта">
+                <input required  type="text" class="form-control" id="email" name="email" placeholder="Почта">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
