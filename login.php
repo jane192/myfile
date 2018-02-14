@@ -1,17 +1,12 @@
 <? require('templades/top.php');
-
-$pname = $_POST['name'];
-$ppassword = $_POST['password'];
+require ('utils/validate.php');
 if ($_POST) {
-    $errors = [];
-    if (!$pname) {
-        $errors[] = 'Имя не заполнено';
-    }   
-  
-   
-    if (!$ppassword) {
-        $errors[] = 'Пароль не заполнен';
-    }
+     $arr = [
+        'name' => 'Имя не заполнено',
+        'password' => 'Пароль не заполнен'
+    ];
+    $errors = validate($arr);
+
    
     
 
@@ -43,7 +38,7 @@ if ($_POST) {
         
 
     } else {
-        print_r($errors);
+        
         foreach ($errors as $err) {
             echo "<div class= 'error'>";
             echo $err;

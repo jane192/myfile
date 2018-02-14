@@ -4,21 +4,23 @@ if ($_POST) {
     print_r($_POST);
     echo "</pre>";*/
 }
+require('utils/validate.php');
+if ($_POST) {
+     $arr = [
+        'name' => 'Имя не заполнено',
+        'password' => 'Пароль не заполнен',
+         'email' => 'Email не заполнен'
+    ];
+    $errors = validate($arr);
 
 
 $pname = $_POST['name'];
 $pemail = $_POST['email'];
 $ppassword = $_POST['password'];
 $ppassword2 = $_POST['password_repeat'];
-if ($_POST) {
-    $errors = [];
-    if (!$pname) {
-        $errors[] = 'Имя не заполнено';
-    }
+
     
-    if (!$pemail) {
-        $errors[] = 'Email не заполнен';
-    }
+   
    
     if (!$ppassword) {
         $errors[] = 'Пароль не заполнен';
@@ -69,7 +71,7 @@ if ($_POST) {
         </script>
         <?php
     } else {
-        print_r($errors);
+        
         foreach ($errors as $err) {
             echo "<div class= 'error'>";
             echo $err;
@@ -85,19 +87,19 @@ if ($_POST) {
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input required type="text" class="form-control" id="name" name="name" placeholder="Имя">
+                <input  type="text" class="form-control" id="name" name="name" placeholder="Имя">
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input required  type="text" class="form-control" id="email" name="email" placeholder="Почта">
+                <input   type="text" class="form-control" id="email" name="email" placeholder="Почта">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input required type="password" class="form-control" id="password" name="password" placeholder="Пароль">
+                <input  type="password" class="form-control" id="password" name="password" placeholder="Пароль">
             </div>
             <div class="form-group">
                 <label for="password_repeat">Password repeat</label>
-                <input required type="password" class="form-control" id="password_repeat" name="password_repeat"
+                <input type="password" class="form-control" id="password_repeat" name="password_repeat"
                        placeholder="Повторить пароль">
             </div>
 

@@ -1,10 +1,40 @@
 <? require('templades/top.php');
-if ($_SESSION['user_id']){   
+$name = $_POST['name'];
+$code = $_POST['code'];
+$body = $_POST['body'];
+$price = $_POST['price'];
+$cat_id = (int)$_POST['cat_id'];
+if ($_SESSION['user_id'])    
+{   
+    if ($_POST){
+        
+ 
+        $picture = '';
 
+   if($_FILES){
+       $tmp_name = $_FILES['picture']['tmp_name'];
+       $file_name = $_FILES['picture']['name'];
+       $dir ='/uploads/';
+       $file_new_name = $_SERVER['DOCUMENT_ROOT'].$dir;
+       $full_path = $file_new_name.$file_name;
+       if (move_uploaded_file($tmp_name,$full_path)){
+           $picture = $file_name;
+       }
+   }
+        $query = "INSERT INTO products VALUES (null,'$name', '$code' ,'$body',$cat_id, '$picture',NOW(),'','show','$price')";
+        $result = mysqli_query($dbconnect, $query);
+        if(!$result){
+            exit($query);
+        }
+                    ?>
+        <script>
+            document.location.href = 'cabinet.php'
 
-   
+        </script>
+        <?php
+    }
 ?>
-<form encode = "multipart/form-data" method="post" class = "form2" action="cabinet.php">
+<form class="col-lg-9" enctype = "multipart/form-data" method="post" class = "form2" action="cabinet.php">
 
          
             <div class="form-group">
@@ -20,12 +50,12 @@ if ($_SESSION['user_id']){
                 <label for="name">Цена</label>
                 <input type="text" class="form-control" id="price" name="price" placeholder="введите цену">
             </div>
-            <textarea id="editor" class="form-control ckeditor" rows="3">Описание</textarea>
+            <textarea id="editor" class="form-control ckeditor" name="body"  rows="3">Описание</textarea>
              <div class="form-group">
                 <label for="name">Фото</label>
-            <input type = "file" >
+            <input type = "file" name="picture">
     </div>
-            <select class="form-control">
+            <select class="form-control" name="cat_id">
   <?php
     $query = "SELECT * FROM categories WHERE showhide = 'show'";
     $cat = mysqli_query($dbconnect,$query);
@@ -47,7 +77,7 @@ if ($_SESSION['user_id']){
         }else {
     echo "Ошибка входа";
             exit('Error query');
-    
-}?>
+}
+?>
 <?require_once('templades/bottom.php');?>
 <script src="ckeditor/ckeditor.js"></script>
