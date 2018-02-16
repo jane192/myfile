@@ -18,14 +18,15 @@ if(!$cat){
                 <h3>
                     <?=$arr['name'];?>
                 </h3>
-                <p>
+                <div>
                     <?=$arr['code'];?>
-                </p>
-                <p>
+                </div>
+                <div>
                     <?=$arr['body'];?>
-                </p>
-
-                <img src="uploads/<?=$arr['picture'];?>" alt=" " width=200px height = 150px>
+                </div>
+                <div>
+                    <a href="#" class="link" data_id="<?=$arr['id'];?>"><img src="uploads/<?=$arr['pictury'];?>" alt=" " width=200px height = 150px></a>
+                    <div class="left"> <?=$arr['body'];?></div></div>
                 <?
   }        
    require('templades/bottom.php');?>
