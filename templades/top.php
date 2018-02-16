@@ -39,8 +39,10 @@ require_once('config/config.php');
             <a href="/index.php?url=content">О группе</a>
            <? if (isset($_SESSION['user_id'])){
     ?>
+<a href = "products.php"> Продукты</a>
 <a href = "cabinet.php"> Кабинет</a>
 <a href = "logout.php">Выход</a>
+
 <?
 }else{
  

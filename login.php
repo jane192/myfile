@@ -1,6 +1,18 @@
 <? require('templades/top.php');
 require ('utils/validate.php');
+$pname = $_POST['name'];
+$ppassword = $_POST['password'];
 if ($_POST) {
+    $errors = [];
+    if (!$pname) {
+        $errors[] = 'Имя не заполнено';
+    }   
+  
+   
+    if (!$ppassword) {
+        $errors[] = 'Пароль не заполнен';
+    }
+
      $arr = [
         'name' => 'Имя не заполнено',
         'password' => 'Пароль не заполнен'
@@ -48,7 +60,8 @@ if ($_POST) {
 }
 
 ?>
-    <main class='center'>
+    <main>
+    	<div class = "col-lg-9 center">
         <h2>Вход</h2>
         <form method="post" class = "form1" action="login.php">
 
@@ -64,6 +77,6 @@ if ($_POST) {
 
             <button type="submit" class="btn btn-default">Войти</button>
         </form>
-    </main>
+   
     <br style="clear: both"/>
-<? require('templades/bottom.php'); ?>
+<? require('templades/bottom.php');?>
