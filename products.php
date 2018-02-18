@@ -17,16 +17,12 @@ if(!$cat){
         ?>
                 <h3>
                     <?=$arr['name'];?>
-                </h3>
-                <div>
-                    <?=$arr['code'];?>
-                </div>
-                <div>
-                    <?=$arr['body'];?>
-                </div>
+                </h3>                
+               
                 <div>
                     <a href="#" class="link" data_id="<?=$arr['id'];?>"><img src="uploads/<?=$arr['pictury'];?>" alt=" " width=200px height = 150px></a>
-                    <div class="left"> <?=$arr['body'];?></div></div>
+                    <ficaption class=""> <?=$arr['body'];?></ficaption>
+                </div>
                 <?
   }        
    require('templades/bottom.php');?>
