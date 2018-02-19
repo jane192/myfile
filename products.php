@@ -20,7 +20,7 @@ if(!$cat){
                 </h3>                
                
                 <div>
-                    <a href="#" class="link" data_id="<?=$arr['id'];?>"><img src="uploads/<?=$arr['pictury'];?>" alt=" " width=200px height = 150px></a>
+                    <a href="#" class="link" data_id="<?=$arr['id'];?>"><img src="uploads/<?=$arr['pictury'];?>" alt=" " width=200px></a>
                     <ficaption class=""> <?=$arr['body'];?></ficaption>
                 </div>
                 <?

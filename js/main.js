@@ -33,9 +33,21 @@ $(function(){
         console.log(modal);
         $('<a>').attr('href','#').addClass('model-close-btn').html('&times;').click(function(e){
             e.preventDefault();
-            console.log('djfdhf');
+            console.log('gsgsgs');
             modal.remove();
         }).appendTo(modal);
+        $.ajax({
+            url:'ajax.php',
+            type:'post',
+            data:'id='+id,
+            success:function(data) {
+                modal.append(data);
+
+            },
+            error:function(msg){
+                modal.append(msg);
+            }
+        });
 
     });
 });

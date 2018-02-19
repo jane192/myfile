@@ -7,7 +7,7 @@ body {
 }
 
 .header {
-    height: 150px;
+    height: 165px;
     background-image: url(images/fon2.jpg);
 }
 
@@ -208,7 +208,13 @@ figure {
 .form2{
     margin-left: 20px;
 }
+table{
+    border:solid 1px white;
+}
+td{
+    border:solid 1px white;
 
+}
 
 
 .mini_new {
@@ -279,13 +285,18 @@ small {
     float: right;
     padding-bottom: 50px;
     color: white;
-}
+}.form-control{
+    width: 80%;
+ }
+ .forma{
+     width: 200px;
+ }
    .modal-window{
         position: absolute;
         top:200px;
         left:50%;
         width:400px;
-       height: 200px;
+       height: 400px;
         margin-left:-200px;
         padding: 10px;
         border:solid 1px black;
@@ -309,6 +320,7 @@ small {
     left:320px;
     margin: 0;
     padding: 0;
+    font-size: 30px;
     
 }
 #overlay{

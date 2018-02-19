@@ -39,6 +39,7 @@ require_once('config/config.php');
             <a href="#"data-url="Photo/go.jpg" data-title="Песни">Песни</a>
             <a href="#"data-url="Photo/go.jpg" data-title="Тексты песен">Тексты песен</a>            
             <a href="/index.php?url=content"data-url="Photo/go.jpg" data-title="About Hurts">О группе</a>
+            <a href="cart.php"data-url="Photo/go.jpg" data-title="Заказ">Заказ</a>
             
            <? if (isset($_SESSION['user_id'])){
     ?>
