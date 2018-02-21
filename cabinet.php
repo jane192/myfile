@@ -50,7 +50,7 @@ if ($_SESSION['user_id'])
                 <label for="name">Цена</label>
                 <input type="text" class="form-control" id="price" name="price" placeholder="введите цену">
             </div>
-            <textarea id="editor" class="form-control ckeditor" name="body"  rows="3">Описание</textarea>
+            <textarea id="editor" class="form-control ckeditor" name="body"  rows="3"></textarea>
              <div class="form-group">
                 <label for="name">Фото</label>
             <input type = "file" name="picture">

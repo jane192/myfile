@@ -1,7 +1,6 @@
 <?require('templades/top.php');?>
 
-    <main>
-        <div class="center col-lg-9 ">
+    
 
             <div class="news">
                 <h2>Продукты</h2>

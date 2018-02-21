@@ -58,3 +58,5 @@ require_once('config/config.php');
 ?>
         </nav>
     </header>
+    <main>
+        <div class="center col-lg-9 ">

@@ -3,8 +3,8 @@
         <div class="widgets col-lg-3">
             <div class="search">
                 <h2>Поиск</h2>
-                <form class="form" action=""><input type="text" placeholder="Поиск по сайту">
-                    <a href="#"><i class=" glyphicon glyphicon-search "></i></a>
+                <form method ="get" class="form" action="search.php"><input type="search" name ="name" placeholder="Поиск по сайту">
+                    <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search "></i></button>
                 </form>
             </div>
             <div class="mini_news">

@@ -63,6 +63,35 @@ $summa = $arr['price'] * $value;
                 <td> </td>
             </tr>
         </table>
-    </div>
+        <form method="post" class = "form3" enctype = "multipart/form-data" action="order.php">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input  type="text" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input  type="text" class="form-control" id="phone" name="phone" placeholder="Телефон">
+            </div>
+            <div class="form-group">
+            <label for="others">Others</label>
+            <textarea name="others" id="editor" class=" ckeditor" placeholder="Комментарии"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Подтвердить</button>
+
+        </form>
+        <div class ="thank">
+            <?
+             if($_GET['url']){
+                 echo $_GET['url'];
+             }
+            ?>
+        </div>
+
+</div>
+
+
+
+
 <?
 require_once('templades/bottom.php'); ?>
+        <script src="ckeditor/ckeditor.js"></script>

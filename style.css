@@ -182,6 +182,11 @@ nav a:hover {
     margin-left: 20px;
     margin: auto;
 }
+.form3{
+    width: 400px;
+    margin-left: 20px;
+    margin: auto;
+}
 
 input {
     background-color: #005775;
@@ -280,13 +285,18 @@ footer {
     text-decoration: none;
     border-radius: 5px;
 }
+.thank{
+    color:#770088;
+    font-size: 2em;
+    text-align: center;
 
+}
 small {
     float: right;
     padding-bottom: 50px;
     color: white;
 }.form-control{
-    width: 80%;
+    width: 100%;
  }
  .forma{
      width: 200px;

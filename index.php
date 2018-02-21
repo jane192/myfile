@@ -13,8 +13,8 @@
      }
      $arr = mysqli_fetch_array($adr);
      ?>
-    <main>
-        <div class="center col-lg-9 ">
+
+
 
             <h2><?=$arr['name'];?></h2>
            <div><?=$arr['body'];?></div>
@@ -53,5 +53,6 @@
                     </li>
                 </ul>
             </div>
+ 
        
    <?require('templades/bottom.php');?>

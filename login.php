@@ -60,8 +60,7 @@ if ($_POST) {
 }
 
 ?>
-    <main>
-    	<div class = "col-lg-9 center">
+    
         <h2>Вход</h2>
         <form method="post" class = "form1" action="login.php">
 
