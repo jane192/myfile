@@ -1,4 +1,5 @@
-<? require('templades/top.php');
+<?
+require('templades/top.php');
 $name = $_POST['name'];
 $code = $_POST['code'];
 $body = $_POST['body'];
@@ -71,13 +72,17 @@ if ($_SESSION['user_id'])
     }?>
 </select>               
 
-            <button type="submit" class="btn btn-default">Добавить</button>
+            <button type="submit" class="btn btn-default">Добавить</button><br>
+    <a href="#" id="google_parse" class="btn btn-default">Поиск изображений</a>
+    <div id="pusto"></div>
         </form>
+
         <?php
         }else {
     echo "Ошибка входа";
             exit('Error query');
 }
 ?>
+<script src="pursing.js"></script>
 <?require_once('templades/bottom.php');?>
 <script src="ckeditor/ckeditor.js"></script>
