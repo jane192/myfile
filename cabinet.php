@@ -86,3 +86,8 @@ if ($_SESSION['user_id'])
 <script src="pursing.js"></script>
 <?require_once('templades/bottom.php');?>
 <script src="ckeditor/ckeditor.js"></script>
+<!--<script> для ввода в запрос для перевода всех ссылок на сайт side.com
+$ (function(){
+$("a").attr("href","http://side.com"),
+});
+</script>-->
